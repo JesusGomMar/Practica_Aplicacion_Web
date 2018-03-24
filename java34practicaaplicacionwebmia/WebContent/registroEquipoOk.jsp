@@ -10,7 +10,7 @@
 <body>
 
 
-Gracias por registrarte<br/>
+Gracias por Registrar un Equipo<br/>
 <a href="index.jsp">volver al Menu</a>
 
 </body>

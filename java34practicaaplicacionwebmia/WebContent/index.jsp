@@ -10,10 +10,10 @@
 <body>
 
 
-
+Bienvenid@ a la administración del portal de equipos </br>
 <!-- creamos un menu  -->
 <jsp:include page="menu.jsp"></jsp:include>
-Bienvenid@ a la administración del portal de equipos
+
 
 </body>
 </html>

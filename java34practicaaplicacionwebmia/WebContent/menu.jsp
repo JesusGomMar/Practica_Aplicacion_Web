@@ -6,7 +6,7 @@
 </c:if>
 <!-- hacemos las llamadas a las diferentes opciones de administracion -->
 <a href = "ServletListadoJugadoresAdmin">Gestionar Jugadores</a>&nbsp;
-<a href = "ServletListadoEquiposAdmin">Gestionar Equipos</a>&nbsp;
-<a href = "ServletLogOutAdmin">SALIR</a>&nbsp;
-<a href = "ServletRegistroJugadoresAdmin">Registrar Jugadores</a> &nbsp;
-<a href = "ServletRegistroEquiposAdmin">Registrar Equipos</a> &nbsp;
+<a href = "ServletListadoEquiposAdmin">Gestionar Equipos</a>&nbsp; </br>
+<a href = "registrarJugador.jsp">Registrar Jugador</a> &nbsp;
+<a href = "registrarEquipo.jsp">Registrar Equipo</a> &nbsp; </br>
+<a href = "ServletLogOutAdmin">SALIR</a>&nbsp; </br>

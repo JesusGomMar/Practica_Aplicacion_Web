@@ -28,10 +28,10 @@ public class ServletRegistroEquiposAdmin extends HttpServlet {
 		
 		System.out.println("se ejecuta el service del ServletRegistroEquiposAdmin");
 		
-		String nombre_jugador = request.getParameter("campoNombre_Jugador");
-		String nombre_equipo = request.getParameter("campoNombre_Equipo");
+		String nombre_jugador = request.getParameter("campoNombre_jugador");
+		String nombre_equipo = request.getParameter("campoNombre_equipo");
 		String fecha = request.getParameter("campoFecha");
-		String legendario = request.getParameter("campoLegendario");
+		String legendario = request.getParameter("campoLegendarios");
 		String pok1 = request.getParameter("campoPok1");
 		String pok2 = request.getParameter("campoPok2");
 		String pok3 = request.getParameter("campoPok3");

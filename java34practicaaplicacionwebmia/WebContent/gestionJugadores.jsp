@@ -12,7 +12,7 @@
 
 
 <jsp:include page="menu.jsp"></jsp:include>
-<c:forEach items="${jugadores}" var="jugadores">
+<c:forEach items="${jugadores}" var="jugador">
 
  	<div style="margin: 8px">
  		Nombre: ${jugador.nombre}<br/>

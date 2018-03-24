@@ -35,6 +35,7 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("la sql de insercion del equipo esta mal");
+			System.out.println(e.getMessage());
 		}
 		desconectar();		
 		
@@ -44,7 +45,9 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 	public void borrarEquipo(int id) {
 
 		try {
+			System.out.println("se va a cargar la sql en ps");
 			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.BORRADO_EQUIPO_ADMIN);
+			System.out.println("se ha cargado la sql en ps: "+ ps);
 			ps.setInt(1, id);
 			ps.execute();
 			ps.close();
@@ -52,6 +55,7 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("sql borrado equipo esta mal");
+			System.out.println(e.getMessage());
 		}
 		
 		desconectar();
@@ -82,7 +86,8 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 					}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("sql equipos esta mal");
+			System.out.println("sql  seleccion de equipos esta mal");
+			System.out.println(e.getMessage());
 		}
 		desconectar();
 		
@@ -130,8 +135,8 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 		
 		try {
 			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.GUARDAR_CAMBIOS_EQUIPO);
-			ps.setString(1, equipo.getNombre_equipo());
-			ps.setString(2, equipo.getNombre_jugador());
+			ps.setString(1, equipo.getNombre_jugador());
+			ps.setString(2, equipo.getNombre_equipo());
 			ps.setString(3, equipo.getFecha());
 			ps.setString(4, equipo.getLegendarios());
 			ps.setString(5, equipo.getPok1());
@@ -143,7 +148,7 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("fallo en la sql de guardar cambios anuncio");
+			System.out.println("fallo en la sql de guardar cambios equipo");
 			System.out.println(e.getMessage());
 		}
 		

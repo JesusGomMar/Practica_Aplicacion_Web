@@ -33,7 +33,7 @@ public class ServletRegistroJugadoresAdmin extends HttpServlet {
 		String poblacion = request.getParameter("campoPoblacion");
 		String telefono = request.getParameter("campoTelefono");
 		String email = request.getParameter("campoEmail");
-		String particular_empresa = request.getParameter("campoParticular_Empresa");
+		String particular_empresa = request.getParameter("campoParticular_empresa");
 		
 		//parte de validacion de datos
 		//......

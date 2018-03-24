@@ -38,7 +38,8 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("la sql de insercion el anuncio esta mal");
+			System.out.println("la sql de registro del jugador esta mal");
+			System.out.println(e.getMessage());
 
 		}
 		desconectar();
@@ -61,6 +62,7 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("sql borrado jugador esta mal");
+			System.out.println(e.getMessage());
 		}
 		
 		desconectar();
@@ -74,18 +76,20 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 		List<Jugador> jugadores = new ArrayList<Jugador>();
 		try {
 			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.SELECCION_JUGADOR);
+
 			ResultSet resultado = ps.executeQuery();
 					while (resultado.next()) {
 						
 						Jugador jugador = new Jugador();
 						jugador.setNombre(resultado.getString("nombre"));
+						System.out.println("nombre: "+ resultado.getString("nombre"));
 						jugador.setCalle(resultado.getString("calle"));
 						jugador.setNumeracion(resultado.getString("numeracion"));
 						jugador.setCp(resultado.getString("cp"));
 						jugador.setPoblacion(resultado.getString("poblacion"));
 						jugador.setTelefono(resultado.getString("telefono"));
 						jugador.setEmail(resultado.getString("email"));
-						jugador.setParticular_empresa(resultado.getString("partucular_empresa"));
+						jugador.setParticular_empresa(resultado.getString("particular_empresa"));
 						jugador.setId(resultado.getInt("id"));
 						
 						jugadores.add(jugador);
@@ -93,7 +97,8 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 					}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("sql jugador esta mal");
+			System.out.println("sql seleccion de jugador esta mal");
+			System.out.println(e.getMessage());
 		}
 		desconectar();
 		
@@ -120,7 +125,7 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 			}
 			
 		} catch (SQLException e) {
-			System.out.println("sql de identificacion tiene problemas");
+			System.out.println("sql de identificacion admin tiene problemas");
 			System.out.println(e.getMessage());
 		}
 		
