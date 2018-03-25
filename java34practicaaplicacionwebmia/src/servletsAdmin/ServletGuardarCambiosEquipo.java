@@ -26,8 +26,8 @@ public class ServletGuardarCambiosEquipo extends HttpServlet {
 //		}
 		
 		
-		String nombre_jugador = request.getParameter("campoNombre_Jugador");
-		String nombre_equipo = request.getParameter("campoNombre_Equipor");
+		String nombre_jugador = request.getParameter("campoNombre_jugador");
+		String nombre_equipo = request.getParameter("campoNombre_equipo");
 		String fecha = request.getParameter("campoFecha");
 		String legendarios = request.getParameter("campoLegendarios");
 		String pok1 = request.getParameter("campoPok1");
@@ -38,10 +38,9 @@ public class ServletGuardarCambiosEquipo extends HttpServlet {
 		//ahora deberiamos validar todos los parametros
 		
 		// fin parte validacion
-		
+
 		Equipo equipo = new Equipo(nombre_jugador, nombre_equipo, fecha, legendarios, pok1, pok2, pok3);
 		equipo.setId(Integer.parseInt(id));
-		
 		EquiposDAO equiposDAO = new EquiposDAOImpl();
 		equiposDAO.guardarCambiosEquipo(equipo);
 		

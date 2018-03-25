@@ -28,8 +28,9 @@ public class ServletBorrarEquipo extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		System.out.println("Se va a borrar el equipo de ID: "+ id);
 		EquiposDAO equipoDAO = new EquiposDAOImpl();
+		// explota al usar borrar equipo
 		equipoDAO.borrarEquipo(id);
-		request.setAttribute("equipos", equipoDAO.obtenerEquipos());
+		request.setAttribute("equipo", equipoDAO.obtenerEquipos());
 		request.getRequestDispatcher("ServletListadoEquiposAdmin").forward(request, response);
 		
 		

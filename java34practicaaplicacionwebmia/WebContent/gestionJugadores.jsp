@@ -22,8 +22,6 @@
  		Teléfono: ${jugador.telefono }<br/>
  		Email: ${jugador.email }<br/>
  		Particular/Empresa: ${jugador.particular_empresa }<br/>
-
-
  		<a href="ServletBorrarJugador?id=${jugador.id}">BORRAR</a>
 	</div>
 

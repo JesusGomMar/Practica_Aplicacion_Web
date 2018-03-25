@@ -14,8 +14,8 @@
 <jsp:include page="menu.jsp"></jsp:include>
 
 <form action="ServletGuardarCambiosEquipo" method="post">
-	Nombre del Jugador: <input type="text" name= "campoNombre_Jugador" value="${equipoAEditar.nombre_jugador}"/><br/>
-	Nombre del Equipo: <input type="text" name= "campoNombre_Equipo" value="${equipoAEditar.nombre_equipo}"/><br/>
+	Nombre del Jugador: <input type="text" name= "campoNombre_jugador" value="${equipoAEditar.nombre_jugador}"/><br/>
+	Nombre del Equipo: <input type="text" name= "campoNombre_equipo" value="${equipoAEditar.nombre_equipo}"/><br/>
 	Fecha:<input type="date" name= "campoFecha" value="${equipoAEditar.fecha}"/><br/>
 	Legendarios: <input type="text" name= "campoLegendarios" value="${equipoAEditar.legendarios}"/><br/>
 	Pokemon 1: <input type="text" name= "campoPok1" value="${equipoAEditar.pok1}"/><br/>

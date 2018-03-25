@@ -1,4 +1,3 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,12 +7,7 @@
 <title>Registro Equipo</title>
 </head>
 <body>
-<!--  
-<c:if test="${sessionScope.identificado == null }">
-	<jsp:forward page="login.jsp"></jsp:forward>
-</c:if>
-<div style="color: red">${mensaje}</div>
--->
+
 <a href = "index.jsp">volver a inicio</a><br/>
 
 Introduce los datos de tu Equipo:<br/>

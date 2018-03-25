@@ -82,7 +82,6 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 						
 						Jugador jugador = new Jugador();
 						jugador.setNombre(resultado.getString("nombre"));
-						System.out.println("nombre: "+ resultado.getString("nombre"));
 						jugador.setCalle(resultado.getString("calle"));
 						jugador.setNumeracion(resultado.getString("numeracion"));
 						jugador.setCp(resultado.getString("cp"));

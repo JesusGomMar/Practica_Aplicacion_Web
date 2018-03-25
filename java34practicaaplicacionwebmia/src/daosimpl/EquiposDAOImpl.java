@@ -46,8 +46,9 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 
 		try {
 			System.out.println("se va a cargar la sql en ps");
+			// llega hasta aki ok, id ok, da null pointerexception
 			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.BORRADO_EQUIPO_ADMIN);
-			System.out.println("se ha cargado la sql en ps: "+ ps);
+			System.out.println("ps: " + ps);
 			ps.setInt(1, id);
 			ps.execute();
 			ps.close();
@@ -134,6 +135,7 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 		conectar();
 		
 		try {
+
 			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.GUARDAR_CAMBIOS_EQUIPO);
 			ps.setString(1, equipo.getNombre_jugador());
 			ps.setString(2, equipo.getNombre_equipo());
