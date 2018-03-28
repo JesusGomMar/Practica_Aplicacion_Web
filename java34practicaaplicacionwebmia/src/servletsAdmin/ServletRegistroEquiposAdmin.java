@@ -1,6 +1,9 @@
 package servletsAdmin;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +40,33 @@ public class ServletRegistroEquiposAdmin extends HttpServlet {
 		String pok3 = request.getParameter("campoPok3");
 		
 		//parte de validacion de datos
+		
+		String expresionRegularNombre_jugador = "[a-zA-Z·ÈÌÛ˙Ò—\\s]{3,25}";
+		String expresionRegularNombre_equipo = "[a-zA-Z·ÈÌÛ˙Ò—\\s]{3,10}";
+		
+		Pattern patternNombre_jugador = Pattern.compile(expresionRegularNombre_jugador);
+		Matcher matcherNombreJugador = patternNombre_jugador.matcher(nombre_jugador);
+		if(matcherNombreJugador.matches()) {
+			System.out.println("nombre ok");
+		}else {
+			System.out.println("nombre ko");
+			request.setAttribute("mensaje", "nombre no valido");
+			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
+			return;
+		}
+		
+		
+		
+		Pattern patternNombre_equipo = Pattern.compile(expresionRegularNombre_equipo);
+		Matcher matcherNombre_equipo = patternNombre_equipo.matcher(nombre_equipo);
+		if(matcherNombre_equipo.matches()) {
+			System.out.println("nombre equipo ok");
+		}else {
+			System.out.println("nombre equipo ko");
+			request.setAttribute("mensaje", "nombre no valido");
+			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
+			return;
+		}
 		
 		//fin parte de validacion de datos
 		

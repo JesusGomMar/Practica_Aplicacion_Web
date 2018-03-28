@@ -16,10 +16,27 @@ Introduce los datos de tu Equipo:<br/>
 	Nombre Jugador: <input type="text" name="campoNombre_jugador"/><br/>
 	Nombre Equipo: <input type="text" name="campoNombre_equipo"/><br/>
 	Fecha:  <input type="date" name="campoFecha"/><br/>
-	Legendarios: <input type="text" name="campoLegendarios"/><br/>
-	Pokemon 1: <input type="text" name="campoPok1"><br/>
-	Pokemon 2: <input type="text" name="campoPok2"><br/>
-	Pokemon 3: <input type="text" name="campoPok3"><br/>
+	Legendarios: <input type="radio" name="campoLegendarios" value="conLegendarios" checked>Si &nbsp;
+				 <input type="radio" name="campoLegendarios" value="sinLegendarios">No<br/>
+	Pokemon 1:<select name="campoPok1">
+  					<option value="bulbasur">Bulbasur</option>
+ 					<option value="squirtle">Squirtle</option>
+  					<option value="charmander">Charmander</option>
+  					<option value="pikachu">Pikachu</option>
+				</select><br/>
+				
+	Pokemon 2: <select name="campoPok2">
+  					<option value="ivysaur">Ivysaur</option>
+ 					<option value="wartortle">Wartortle</option>
+  					<option value="charmeleon">Charmeleon</option>
+  					<option value="raichu">Raichu</option>
+				</select><br/>
+	Pokemon 3: <select name="campoPok3">
+  					<option value="venusaur">Venusaur</option>
+ 					<option value="blastoise">Blastoise</option>
+  					<option value="charizard">Charizard</option>
+  					<option value="mew">Mew</option>
+				</select><br/>
 	<input type="submit" value= "Aceptar"/>
 </form>
 

@@ -17,8 +17,10 @@ Introduce los datos de usuario:<br/>
 	Numero: <input type="number" name = "campoNumeracion"><br/>
 	Codigo Postal: <input type="number" name = "campoCp"><br/>
 	Población: <input type="text" name="campoPoblacion"><br/>
+	Teléfono: <input type="number" name="campoTelefono"><br/>
 	Email: <input type="email" name="campoEmail"><br/>
-	Particular/Empresa: <input type="text" name="campoParticular_empresa"><br/>
+	Particular/Empresa: <input type="radio" name="campoParticular_empresa" value="particular" checked>Particular &nbsp;
+						<input type="radio" name="campoParticular_empresa" value="empresa">Empresa<br/>
 
 	<input type="submit" value= "Aceptar"/>
 

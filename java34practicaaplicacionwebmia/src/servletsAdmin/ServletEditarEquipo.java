@@ -27,6 +27,7 @@ public class ServletEditarEquipo extends HttpServlet {
 		
 		
 		int id = Integer.parseInt(request.getParameter("id"));
+		System.out.println("se va a editar el equipo con id: " + id);
 		EquiposDAO equipoDAO = new EquiposDAOImpl();
 		Equipo equipoEditar = equipoDAO.obtenerEquiposPorId(id);
 		request.setAttribute("equipoAEditar", equipoEditar);
