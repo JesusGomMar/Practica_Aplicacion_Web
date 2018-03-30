@@ -32,7 +32,11 @@ public class ServletIdentificacionAdmin extends HttpServlet {
 		JugadoresDAO jugadoresDAO = new JugadoresDAOImpl();
 		if (jugadoresDAO.identificarAdmin(usuario, password)) {
 			request.getSession().setAttribute("admin", "ok");
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("loginOK.jsp").forward(request, response);
+		}else {
+			//email y/o pass incorrecto
+			request.setAttribute("mensaje", "Usuario y/o contraseña incorrectos");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 	
 		

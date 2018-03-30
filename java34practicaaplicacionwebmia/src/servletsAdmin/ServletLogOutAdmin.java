@@ -21,7 +21,7 @@ public class ServletLogOutAdmin extends HttpServlet {
 		
 		// vuelve a index, el cual nos vuelve a llevar a menu, pidiendo de nuevo user y pass
 		request.getSession().invalidate();
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("logOutOK.jsp").forward(request, response);
 	}
 
 }
