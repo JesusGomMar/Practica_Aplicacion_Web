@@ -23,10 +23,10 @@ public class ServletRegistroEquiposAdmin extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-//		if (request.getSession().getAttribute("identificado")==null) {
-//			request.getRequestDispatcher("login.jsp").forward(request, response);
-//			
-//		}
+		if (request.getSession().getAttribute("admin")==null) {
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+			
+		}
 		
 		
 		System.out.println("se ejecuta el service del ServletRegistroEquiposAdmin");

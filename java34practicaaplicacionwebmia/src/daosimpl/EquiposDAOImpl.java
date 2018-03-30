@@ -108,7 +108,7 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 			ResultSet rs =	ps.executeQuery();
 			if(rs.next()) {
 				equipo.setNombre_jugador(rs.getString("nombre_jugador"));
-				equipo.setNombre_equipo(rs.getString("nombre_jugador"));
+				equipo.setNombre_equipo(rs.getString("nombre_equipo"));
 				equipo.setFecha(rs.getString("fecha"));
 				equipo.setLegendarios(rs.getString("legendarios"));
 				equipo.setPok1(rs.getString("pok1"));
