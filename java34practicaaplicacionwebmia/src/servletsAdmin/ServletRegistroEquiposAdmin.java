@@ -43,6 +43,10 @@ public class ServletRegistroEquiposAdmin extends HttpServlet {
 		
 		String expresionRegularNombre_jugador = "[a-zA-Z·ÈÌÛ˙Ò—\\s]{3,25}";
 		String expresionRegularNombre_equipo = "[a-zA-Z·ÈÌÛ˙Ò—\\s]{3,10}";
+		String expresionRegularFecha = "[0-9\\-\\/]{1,10}";
+		String expresionRegularLegendario = "[a-zA-Z]{3,14}";
+		String expresionRegularPok = "[a-zA-Z]{3,10}";
+		
 		
 		Pattern patternNombre_jugador = Pattern.compile(expresionRegularNombre_jugador);
 		Matcher matcherNombreJugador = patternNombre_jugador.matcher(nombre_jugador);
@@ -64,6 +68,61 @@ public class ServletRegistroEquiposAdmin extends HttpServlet {
 		}else {
 			System.out.println("nombre equipo ko");
 			request.setAttribute("mensaje", "nombre no valido");
+			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
+			return;
+		}
+		
+		Pattern patternFecha = Pattern.compile(expresionRegularFecha);
+		Matcher matcherFecha = patternFecha.matcher(fecha);
+		if(matcherFecha.matches()) {
+			System.out.println("fecha ok");
+		}else {
+			System.out.println("fecha ko");
+			request.setAttribute("mensaje", "fecha no valida");
+			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
+			return;
+		}
+		
+		Pattern patternLegendario = Pattern.compile(expresionRegularLegendario);
+		Matcher matcherLegendario = patternLegendario.matcher(legendario);
+		if(matcherLegendario.matches()) {
+			System.out.println("legendario ok");
+		}else {
+			System.out.println("legendario ko");
+			request.setAttribute("mensaje", "legendario no valido");
+			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
+			return;
+		}
+		
+		Pattern patternPok1 = Pattern.compile(expresionRegularPok);
+		Matcher matcherPok1 = patternPok1.matcher(pok1);
+		if(matcherPok1.matches()) {
+			System.out.println("pok1 ok");
+		}else {
+			System.out.println("pok1 ko");
+			request.setAttribute("mensaje", "pok1 no valida");
+			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
+			return;
+		}
+		
+		Pattern patternPok2 = Pattern.compile(expresionRegularPok);
+		Matcher matcherPok2 = patternPok1.matcher(pok2);
+		if(matcherPok2.matches()) {
+			System.out.println("pok2 ok");
+		}else {
+			System.out.println("pok2 ko");
+			request.setAttribute("mensaje", "pok2 no valida");
+			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
+			return;
+		}
+		
+		Pattern patternPok3 = Pattern.compile(expresionRegularPok);
+		Matcher matcherPok3 = patternPok3.matcher(pok3);
+		if(matcherPok3.matches()) {
+			System.out.println("pok3 ok");
+		}else {
+			System.out.println("pok3 ko");
+			request.setAttribute("mensaje", "pok3 no valida");
 			request.getRequestDispatcher("registrarEquipo.jsp").forward(request, response);
 			return;
 		}
