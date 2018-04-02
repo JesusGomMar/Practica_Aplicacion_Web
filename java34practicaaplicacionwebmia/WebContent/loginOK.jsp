@@ -7,9 +7,10 @@
 <title>Login OK</title>
 </head>
 <body>
+Acceso Admin ok<br/>
 <jsp:include page="menu.jsp"></jsp:include>
 
-Acceso Admin ok<br/>
-<a href="index.jsp">volver al inicio</a>
+
+
 </body>
 </html>

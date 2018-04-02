@@ -38,11 +38,16 @@
   					<option value="mew">Mew</option>
 				</select><br/>
 	<input type="hidden" name="campoId" value="${equipoAEditar.id}"/>
+	<script type="text/javascript" src="js/validacionGuardarCambiosEquipo.js"></script>
 	<input type="submit" value="GUARDAR CAMBIOS"/>
 
 
 
 </form>
+
+
+
+
 
 </body>
 </html>

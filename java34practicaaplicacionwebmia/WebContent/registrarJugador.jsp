@@ -22,12 +22,13 @@ Introduce los datos de usuario:<br/>
 	Particular/Empresa: <input type="radio" name="campoParticular_empresa" value="particular" checked>Particular &nbsp;
 						<input type="radio" name="campoParticular_empresa" value="empresa">Empresa<br/>
 
+	<script type="text/javascript" src="js/validacionRegistroJugadores.js"></script>
 	<input type="submit" value= "Aceptar"/>
 
 
-
-
 </form>
+
+
 
 </body>
 </html>

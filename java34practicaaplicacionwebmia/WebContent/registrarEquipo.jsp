@@ -37,10 +37,12 @@ Introduce los datos de tu Equipo:<br/>
   					<option value="charizard">Charizard</option>
   					<option value="mew">Mew</option>
 				</select><br/>
+	
+	<script type="text/javascript" src="js/validacionRegistroEquipos.js"> </script> 
 	<input type="submit" value= "Aceptar"/>
 </form>
 
-<!--  <script type="text/javascript" src="js/validacionRegistrarAnuncioCliente.js"> </script> -->
+
 
 
 
