@@ -23,7 +23,7 @@
  		Pokemon 2: ${equipo.pok2 }<br/>
  		Pokemon 3: ${equipo.pok3 }<br/>
  <!--  	no funciona	<a href="ServletBorrarEquipo?id=${equipo.id}">BORRAR</a> -->
-
+		<a href="ServletBorrarEquipo?id=${equipo.id}">BORRAR</a>
  		
  		<a href="ServletEditarEquipo?id=${equipo.id}">EDITAR</a>
 	</div>

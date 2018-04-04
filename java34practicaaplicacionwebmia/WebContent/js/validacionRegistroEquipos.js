@@ -1,5 +1,5 @@
-function validarFormularioRegistroJugador() {
-	alert("se ejecuta la funcion");
+function validacionRegistroEquipos() {
+//	alert("se ejecuta la funcion");
 	
 	var enviarForm = true;
 	// obtener lo escrito por el user 

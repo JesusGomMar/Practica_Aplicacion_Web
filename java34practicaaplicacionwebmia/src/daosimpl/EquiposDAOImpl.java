@@ -43,7 +43,7 @@ public class EquiposDAOImpl extends GenericDAO implements EquiposDAO {
 
 	@Override
 	public void borrarEquipo(int id) {
-
+		conectar();
 		try {
 			System.out.println("se va a cargar la sql en ps");
 			// llega hasta aki ok, id ok, da null pointerexception

@@ -11,7 +11,7 @@
 <a href = "index.jsp">volver a inicio</a><br/>
 
 Introduce los datos de tu Equipo:<br/>
-<form action="ServletRegistroEquiposAdmin" method="post" >
+<form action="ServletRegistroEquiposAdmin" method="post" onsubmit="return validacionRegistroEquipos()" >
 
 	Nombre Jugador: <input type="text" name="campoNombre_jugador"/><br/>
 	Nombre Equipo: <input type="text" name="campoNombre_equipo"/><br/>
@@ -38,9 +38,11 @@ Introduce los datos de tu Equipo:<br/>
   					<option value="mew">Mew</option>
 				</select><br/>
 	
-	<script type="text/javascript" src="js/validacionRegistroEquipos.js"> </script> 
+	
 	<input type="submit" value= "Aceptar"/>
 </form>
+
+<script type="text/javascript" src="js/validacionRegistroEquipos.js"> </script> 
 
 
 

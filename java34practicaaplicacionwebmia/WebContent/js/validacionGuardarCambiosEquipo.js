@@ -1,5 +1,5 @@
-function validarFormularioRegistroJugador() {
-	alert("se ejecuta la funcion");
+function validarFormularioGuardarCambiosEquipo() {
+//	alert("se ejecuta la funcion");
 	
 	var enviarForm = true;
 	// obtener lo escrito por el user 
@@ -52,6 +52,7 @@ function validarFormularioRegistroJugador() {
 	}	
 	
 	var expresionCampoFecha = /^[0-9\\-\\/]{1,10}$/;
+	alert(fecha);
 	if(expresionCampoFecha.test(fecha)){
 //		alert("fecha ok");
 	}else{

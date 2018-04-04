@@ -10,7 +10,7 @@
 
 <a href = "index.jsp">volver a inicio</a><br/>
 Introduce los datos de usuario:<br/>
-<form action="ServletRegistroJugadoresAdmin" method="post">
+<form action="ServletRegistroJugadoresAdmin" method="post" onsubmit="return validarFormularioRegistroJugador()">
 
 	Nombre: <input type="text" name="campoNombre"/><br/>
 	Calle: <input type="text" name="campoCalle"/><br/>
@@ -22,11 +22,13 @@ Introduce los datos de usuario:<br/>
 	Particular/Empresa: <input type="radio" name="campoParticular_empresa" value="particular" checked>Particular &nbsp;
 						<input type="radio" name="campoParticular_empresa" value="empresa">Empresa<br/>
 
-	<script type="text/javascript" src="js/validacionRegistroJugadores.js"></script>
+	
 	<input type="submit" value= "Aceptar"/>
 
 
 </form>
+
+<script type="text/javascript" src="js/validacionRegistroJugadores.js"></script>
 
 
 
