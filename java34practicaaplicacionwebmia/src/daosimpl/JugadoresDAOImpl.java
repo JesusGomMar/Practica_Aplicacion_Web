@@ -8,10 +8,13 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import com.mysql.jdbc.Statement;
+
 import daos.ConstantesSQL;
 import daos.GenericDAO;
 import daos.JugadoresDAO;
 import modelo.Jugador;
+import utilidades.GestorArchivos;
 import modelo.Equipo;
 
 public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
@@ -21,7 +24,8 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 	public void registrarJugadores(Jugador jugador) {
 		conectar();
 		try {
-			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.INSERCCION_JUGADOR);
+			PreparedStatement ps = miConexion.prepareStatement(ConstantesSQL.INSERCCION_JUGADOR,
+					Statement.RETURN_GENERATED_KEYS);
 			
 			ps.setString(1, jugador.getNombre());
 			ps.setString(2, jugador.getCalle());
@@ -32,6 +36,15 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 			ps.setString(7, jugador.getEmail());
 			ps.setString(8, jugador.getParticular_empresa());
 			ps.execute();
+			// una vez insertado el registro, pediremos el id registrado
+			ResultSet rs = ps.getGeneratedKeys();
+			if (rs.next()) {
+				int idGenerado = rs.getInt(1);
+				System.out.println("id generado en bd: " + idGenerado);
+				// guardar la imagen del producto en una carpeta nombrada con el mismo id
+				// generado
+				GestorArchivos.guardarArchivo(jugador.getImagenSubida(), idGenerado + ".jpg");
+			}
 			ps.close();
 			
 			
@@ -90,6 +103,7 @@ public class JugadoresDAOImpl extends GenericDAO implements JugadoresDAO{
 						jugador.setEmail(resultado.getString("email"));
 						jugador.setParticular_empresa(resultado.getString("particular_empresa"));
 						jugador.setId(resultado.getInt("id"));
+						jugador.setRutaImagen(GestorArchivos.rutaArchivo(resultado.getInt("id")));
 						
 						jugadores.add(jugador);
 						

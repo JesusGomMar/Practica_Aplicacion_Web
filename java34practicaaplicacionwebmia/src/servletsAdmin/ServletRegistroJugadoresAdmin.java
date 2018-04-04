@@ -5,10 +5,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import daos.JugadoresDAO;
 import daosimpl.JugadoresDAOImpl;
@@ -16,6 +18,7 @@ import modelo.Jugador;
 
 
 @WebServlet("/ServletRegistroJugadoresAdmin")
+@MultipartConfig // necesario para la subida de archivos
 public class ServletRegistroJugadoresAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -37,6 +40,7 @@ public class ServletRegistroJugadoresAdmin extends HttpServlet {
 		String telefono = request.getParameter("campoTelefono");
 		String email = request.getParameter("campoEmail");
 		String particular_empresa = request.getParameter("campoParticular_empresa");
+		Part imagen = request.getPart("campoImagen"); // validar q no sea null
 		
 		//parte de validacion de datos
 		
@@ -156,7 +160,7 @@ public class ServletRegistroJugadoresAdmin extends HttpServlet {
 		//......
 		//fin parte de validacion de datos
 		
-		Jugador nuevoJugador = new Jugador(nombre, calle, numeracion, cp, poblacion, telefono, email, particular_empresa);
+		Jugador nuevoJugador = new Jugador(nombre, calle, numeracion, cp, poblacion, telefono, email, particular_empresa, imagen);
 		System.out.println("Vamos a registrar al jugador: " + nuevoJugador.toString());
 		JugadoresDAO jugadoresDAO = new JugadoresDAOImpl();
 		jugadoresDAO.registrarJugadores(nuevoJugador);

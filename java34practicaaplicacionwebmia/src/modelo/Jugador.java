@@ -1,5 +1,7 @@
 package modelo;
 
+import javax.servlet.http.Part;
+
 public class Jugador {
 	
 	private int id;
@@ -11,13 +13,21 @@ public class Jugador {
 	private String telefono;
 	private String email;
 	private String particular_empresa;
+	private Part imagenSubida;
+	private String rutaImagen;
 	
 	public Jugador() {
 		
 	}
 
+
+
+
+
+
+
 	public Jugador(String nombre, String calle, String numeracion, String cp, String poblacion, String telefono,
-			String email, String particular_empresa) {
+			String email, String particular_empresa, Part imagenSubida) {
 		super();
 		this.nombre = nombre;
 		this.calle = calle;
@@ -27,7 +37,38 @@ public class Jugador {
 		this.telefono = telefono;
 		this.email = email;
 		this.particular_empresa = particular_empresa;
+		this.imagenSubida = imagenSubida;
 	}
+
+
+
+
+
+
+
+	public Part getImagenSubida() {
+		return imagenSubida;
+	}
+
+
+
+	public void setImagenSubida(Part imagenSubida) {
+		this.imagenSubida = imagenSubida;
+	}
+
+
+
+	public String getRutaImagen() {
+		return rutaImagen;
+	}
+
+
+
+	public void setRutaImagen(String rutaImagen) {
+		this.rutaImagen = rutaImagen;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -101,12 +142,17 @@ public class Jugador {
 		this.particular_empresa = particular_empresa;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Jugador [id=" + id + ", nombre=" + nombre + ", calle=" + calle + ", numeracion=" + numeracion + ", cp="
 				+ cp + ", poblacion=" + poblacion + ", telefono=" + telefono + ", email=" + email
-				+ ", particular_empresa=" + particular_empresa + "]";
+				+ ", particular_empresa=" + particular_empresa + ", imagenSubida=" + imagenSubida + "]";
 	}
+
+
+	
 
 
 	

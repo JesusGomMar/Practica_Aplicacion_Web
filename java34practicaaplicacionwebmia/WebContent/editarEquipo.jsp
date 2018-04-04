@@ -13,7 +13,7 @@
 
 <jsp:include page="menu.jsp"></jsp:include>
 
-<form action="ServletGuardarCambiosEquipo" method="post" onsubmit="return validarFormularioGuardarCambiosEquipo()">
+<form action="ServletGuardarCambiosEquipo" method="post" >
 	Nombre del Jugador: <input type="text" name= "campoNombre_jugador" value="${equipoAEditar.nombre_jugador}"/><br/>
 	Nombre del Equipo: <input type="text" name= "campoNombre_equipo" value="${equipoAEditar.nombre_equipo}"/><br/>
 	Fecha:<input type="date" name= "campoFecha" value="${equipoAEditar.fecha}"/><br/>
@@ -44,8 +44,10 @@
 
 
 </form>
+<!--  
 <script type="text/javascript" src="js/validacionGuardarCambiosEquipo.js"></script>
-
+onsubmit="return validarFormularioGuardarCambiosEquipo()"
+-->
 
 
 

@@ -10,7 +10,7 @@
 
 <a href = "index.jsp">volver a inicio</a><br/>
 Introduce los datos de usuario:<br/>
-<form action="ServletRegistroJugadoresAdmin" method="post" onsubmit="return validarFormularioRegistroJugador()">
+<form action="ServletRegistroJugadoresAdmin" method="post" enctype="multipart/form-data" >
 
 	Nombre: <input type="text" name="campoNombre"/><br/>
 	Calle: <input type="text" name="campoCalle"/><br/>
@@ -21,15 +21,16 @@ Introduce los datos de usuario:<br/>
 	Email: <input type="email" name="campoEmail"><br/>
 	Particular/Empresa: <input type="radio" name="campoParticular_empresa" value="particular" checked>Particular &nbsp;
 						<input type="radio" name="campoParticular_empresa" value="empresa">Empresa<br/>
-
+	Fotografia: <input type="file" name= "campoImagen"><br/>
 	
 	<input type="submit" value= "Aceptar"/>
 
 
 </form>
-
+<!--  
 <script type="text/javascript" src="js/validacionRegistroJugadores.js"></script>
-
+onsubmit="return validarFormularioRegistroJugador()" 
+-->
 
 
 </body>

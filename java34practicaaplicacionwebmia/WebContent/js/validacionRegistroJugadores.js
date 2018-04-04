@@ -37,7 +37,7 @@ function validarFormularioRegistroJugador() {
 	//{3,10} indica de 3 a 10 elementos
 	// /i es insensitive, acepta mayusculas y no
 	// \s acepta espacios
-	var expresionCampoNombre = /^[a-zA-ZáéíóúñÑ\\s]{3,25}$/;
+	var expresionCampoNombre = /^[a-zA-ZáéíóúñÑ\s]{3,25}$/;
 	if (expresionCampoNombre.test(nombre)){
 //		alert("nombre ok");
 	}else{

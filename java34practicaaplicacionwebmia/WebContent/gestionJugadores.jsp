@@ -15,6 +15,7 @@
 <c:forEach items="${jugadores}" var="jugador">
 
  	<div style="margin: 8px">
+ 		<img src="${jugador.rutaImagen}" height = "200" /><br/>
  		Nombre: ${jugador.nombre}<br/>
  		Calle: ${jugador.calle }<br/>
  		Código Postal: ${jugador.cp }<br/>
@@ -22,6 +23,7 @@
  		Teléfono: ${jugador.telefono }<br/>
  		Email: ${jugador.email }<br/>
  		Particular/Empresa: ${jugador.particular_empresa }<br/>
+
  		<a href="ServletBorrarJugador?id=${jugador.id}">BORRAR</a>
 	</div>
 
